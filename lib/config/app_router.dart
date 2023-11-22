@@ -1,7 +1,4 @@
-import 'package:ecommerce_app/screens/catalog/catalog_screen.dart';
-import 'package:ecommerce_app/screens/product/product_screen.dart';
 import 'package:ecommerce_app/screens/screens.dart';
-import 'package:ecommerce_app/screens/wishlist/wishlist_screen.dart';
 import 'package:flutter/material.dart';
 
 class AppRouter {

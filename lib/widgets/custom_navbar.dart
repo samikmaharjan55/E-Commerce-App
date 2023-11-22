@@ -16,7 +16,8 @@ class CustomNavBar extends StatelessWidget {
           children: [
             IconButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/');
+                Navigator.pushNamedAndRemoveUntil(
+                    context, '/', (route) => false);
               },
               icon: const Icon(
                 Icons.home,
