@@ -2,21 +2,21 @@ import 'package:ecommerce_app/widgets/custom_appbar.dart';
 import 'package:ecommerce_app/widgets/custom_navbar.dart';
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
-  static const String routeName = '/';
+class WishlistScreen extends StatelessWidget {
+  static const String routeName = '/wishlist';
   static Route route() {
     return MaterialPageRoute(
-      builder: (_) => const HomeScreen(),
+      builder: (_) => const WishlistScreen(),
       settings: const RouteSettings(name: routeName),
     );
   }
 
-  const HomeScreen({super.key});
+  const WishlistScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar: CustomAppBar(title: 'Ecommerce'),
+      appBar: CustomAppBar(title: 'Wishlist'),
       bottomNavigationBar: CustomNavBar(),
     );
   }

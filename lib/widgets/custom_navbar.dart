@@ -25,7 +25,7 @@ class CustomNavBar extends StatelessWidget {
             ),
             IconButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/');
+                Navigator.pushNamed(context, '/cart');
               },
               icon: const Icon(
                 Icons.shopping_cart,
@@ -34,7 +34,7 @@ class CustomNavBar extends StatelessWidget {
             ),
             IconButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/');
+                Navigator.pushNamed(context, '/profile');
               },
               icon: const Icon(
                 Icons.person,

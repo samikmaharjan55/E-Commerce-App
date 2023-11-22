@@ -1,4 +1,5 @@
-import 'package:ecommerce_app/screens/home/home_screen.dart';
+import 'package:ecommerce_app/config/app_router.dart';
+import 'package:ecommerce_app/screens/screens.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,6 +17,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      onGenerateRoute: AppRouter.onGenerateRoute,
+      initialRoute: HomeScreen.routeName,
       home: const HomeScreen(),
     );
   }
