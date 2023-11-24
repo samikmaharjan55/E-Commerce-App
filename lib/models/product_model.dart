@@ -34,7 +34,7 @@ class Product extends Equatable {
           'https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=1857&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       price: 2.99,
       isRecommended: true,
-      isPopular: true,
+      isPopular: false,
     ),
     const Product(
       name: 'Soft Drink #2',
@@ -51,7 +51,7 @@ class Product extends Equatable {
       imageUrl:
           'https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=1857&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       price: 2.99,
-      isRecommended: true,
+      isRecommended: false,
       isPopular: true,
     ),
     const Product(
@@ -64,13 +64,13 @@ class Product extends Equatable {
       isPopular: true,
     ),
     const Product(
-      name: 'Smoothies #1',
+      name: 'Smoothies #2',
       category: 'Smoothies',
       imageUrl:
           'https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=1857&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       price: 2.99,
       isRecommended: true,
-      isPopular: true,
+      isPopular: false,
     ),
   ];
 }
