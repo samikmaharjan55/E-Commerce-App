@@ -102,7 +102,7 @@ class ProductCard extends StatelessWidget {
                               ),
                             ),
                           )
-                        : SizedBox(),
+                        : const SizedBox(),
                   ],
                 ),
               ),
