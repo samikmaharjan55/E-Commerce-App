@@ -59,12 +59,9 @@ class ProductScreen extends StatelessWidget {
                   backgroundColor: Colors.white,
                 ),
                 onPressed: () {},
-                child: TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    'ADD TO CART',
-                    style: Theme.of(context).textTheme.headlineSmall,
-                  ),
+                child: Text(
+                  'ADD TO CART',
+                  style: Theme.of(context).textTheme.headlineSmall,
                 ),
               ),
             ],

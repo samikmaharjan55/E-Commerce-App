@@ -1,8 +1,7 @@
-import 'package:ecommerce_app/widgets/custom_appbar.dart';
-import 'package:ecommerce_app/widgets/custom_navbar.dart';
 import 'package:flutter/material.dart';
 
 import '../../models/models.dart';
+import '../../widgets/widgets.dart';
 
 class CartScreen extends StatelessWidget {
   static const String routeName = '/cart';
@@ -19,62 +18,144 @@ class CartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(title: 'Cart'),
-      bottomNavigationBar: const CustomNavBar(),
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.black,
+        child: SizedBox(
+          height: 70,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.white,
+                ),
+                onPressed: () {},
+                child: Text(
+                  'GO TO CHECKOUT',
+                  style: Theme.of(context).textTheme.headlineSmall,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            Column(
               children: [
-                Text(
-                  'Add \$20.0 for FREE Delivery',
-                  style: Theme.of(context).textTheme.titleMedium,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Add \$20.0 for FREE Delivery',
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/');
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.black,
+                        shape: const RoundedRectangleBorder(),
+                        elevation: 0.0,
+                      ),
+                      child: Text(
+                        'Add More Items',
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleMedium!
+                            .copyWith(color: Colors.white),
+                      ),
+                    ),
+                  ],
                 ),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/');
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.black,
-                    shape: const RoundedRectangleBorder(),
-                    elevation: 0.0,
-                  ),
-                  child: Text(
-                    'Add More Items',
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleMedium!
-                        .copyWith(color: Colors.white),
-                  ),
+                const SizedBox(height: 10),
+                CartProductCard(
+                  product: Product.products[0],
+                ),
+                CartProductCard(
+                  product: Product.products[2],
                 ),
               ],
             ),
-            CartProductCard(
-              product: Product.products[0],
+            Column(
+              children: [
+                const Divider(thickness: 2),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 40.0, vertical: 10.0),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text('SUBTOTAL',
+                              style: Theme.of(context).textTheme.titleMedium),
+                          Text(
+                            '\$5.98',
+                            style: Theme.of(context).textTheme.titleMedium,
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 10),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text('DELIVERY FEE',
+                              style: Theme.of(context).textTheme.titleMedium),
+                          Text(
+                            '\$2.90',
+                            style: Theme.of(context).textTheme.titleMedium,
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                Stack(
+                  children: [
+                    Container(
+                      width: MediaQuery.of(context).size.width,
+                      height: 60,
+                      decoration:
+                          BoxDecoration(color: Colors.black.withAlpha(50)),
+                    ),
+                    Container(
+                      width: MediaQuery.of(context).size.width,
+                      margin: const EdgeInsets.all(5.0),
+                      height: 50,
+                      decoration: const BoxDecoration(color: Colors.black),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 30.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text('TOTAL',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleMedium!
+                                    .copyWith(color: Colors.white)),
+                            Text(
+                              '\$12.90',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleMedium!
+                                  .copyWith(color: Colors.white),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
             ),
           ],
         ),
       ),
-    );
-  }
-}
-
-class CartProductCard extends StatelessWidget {
-  final Product product;
-  const CartProductCard({super.key, required this.product});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Image.network(
-          product.imageUrl,
-          width: 100,
-          height: 80,
-          fit: BoxFit.cover,
-        ),
-      ],
     );
   }
 }
