@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Ecommerce App',
+        title: 'Collective Froba',
         theme: theme(),
         onGenerateRoute: AppRouter.onGenerateRoute,
         initialRoute: HomeScreen.routeName,

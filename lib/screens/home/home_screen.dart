@@ -17,7 +17,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(title: 'Ecommerce'),
+      appBar: const CustomAppBar(title: 'Collective Froba'),
       bottomNavigationBar: const CustomNavBar(),
       body: Column(
         children: [
