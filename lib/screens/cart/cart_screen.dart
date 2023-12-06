@@ -55,7 +55,8 @@ class CartScreen extends StatelessWidget {
                     ),
                     ElevatedButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/');
+                        Navigator.pushNamedAndRemoveUntil(
+                            context, '/', (route) => false);
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.black,
