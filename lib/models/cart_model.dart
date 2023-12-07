@@ -3,7 +3,8 @@ import 'package:equatable/equatable.dart';
 import 'models.dart';
 
 class Cart extends Equatable {
-  Cart();
+  final List<Product> products;
+  const Cart({this.products = const <Product>[]});
 
   // total of all cart items
   double get subtotal =>
@@ -40,55 +41,6 @@ class Cart extends Equatable {
 
   String get freeDeliveryString => freeDelivery(subtotal);
 
-  // list of products
-  final List<Product> products = [
-    const Product(
-      name: 'Soft Drink #1',
-      category: 'Soft Drinks',
-      imageUrl:
-          'https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=1857&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      price: 2.99,
-      isRecommended: true,
-      isPopular: false,
-    ),
-    const Product(
-      name: 'Soft Drink #2',
-      category: 'Soft Drinks',
-      imageUrl:
-          'https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=1857&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      price: 2.99,
-      isRecommended: true,
-      isPopular: true,
-    ),
-    const Product(
-      name: 'Soft Drink #3',
-      category: 'Soft Drinks',
-      imageUrl:
-          'https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=1857&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      price: 2.99,
-      isRecommended: false,
-      isPopular: true,
-    ),
-    const Product(
-      name: 'Smoothies #1',
-      category: 'Smoothies',
-      imageUrl:
-          'https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=1857&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      price: 3.99,
-      isRecommended: true,
-      isPopular: true,
-    ),
-    const Product(
-      name: 'Smoothies #2',
-      category: 'Smoothies',
-      imageUrl:
-          'https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=1857&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      price: 3.99,
-      isRecommended: true,
-      isPopular: false,
-    ),
-  ];
-
   @override
-  List<Object?> get props => [];
+  List<Object?> get props => [products];
 }
