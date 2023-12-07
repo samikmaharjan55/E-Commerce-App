@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         title: 'Collective Froba',
         theme: theme(),
         onGenerateRoute: AppRouter.onGenerateRoute,
-        initialRoute: HomeScreen.routeName,
+        initialRoute: SplashScreen.routeName,
         home: const HomeScreen(),
       ),
     );
