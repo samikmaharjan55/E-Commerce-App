@@ -3,10 +3,13 @@ import 'package:ecommerce_app/blocs/wishlist/wishlist_bloc.dart';
 import 'package:ecommerce_app/config/app_router.dart';
 import 'package:ecommerce_app/screens/screens.dart';
 import 'package:ecommerce_app/widgets/theme.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
