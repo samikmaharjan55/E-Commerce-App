@@ -44,7 +44,7 @@ class ProductScreen extends StatelessWidget {
                           .read<WishlistBloc>()
                           .add(AddWishlistProduct(product));
                       const snackBar = SnackBar(
-                        content: Text('Added to your Wishlist!'),
+                        content: Text('Added to your Wishlist!!!'),
                       );
                       ScaffoldMessenger.of(context).showSnackBar(snackBar);
                     },
