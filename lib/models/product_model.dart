@@ -19,7 +19,7 @@ class Product extends Equatable {
   });
 
   static Product fromSnapshot(DocumentSnapshot snap) {
-    Product category = Product(
+    Product product = Product(
       name: snap['name'],
       category: snap['category'],
       imageUrl: snap['imageUrl'],
