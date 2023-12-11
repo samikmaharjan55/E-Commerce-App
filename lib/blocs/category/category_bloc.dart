@@ -1,9 +1,7 @@
 import 'dart:async';
-
-import 'package:bloc/bloc.dart';
 import 'package:ecommerce_app/repositories/category/category_repository.dart';
 import 'package:equatable/equatable.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../models/models.dart';
 
@@ -25,7 +23,7 @@ class CategoryBloc extends Bloc<CategoryEvent, CategoryState> {
       yield* _mapLoadCategoriesToState();
     }
     if (event is UpdateCategories) {
-      yield* _mapUpdateCategoriesToState();
+      yield* _mapUpdateCategoriesToState(event);
     }
   }
 
