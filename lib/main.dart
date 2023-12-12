@@ -1,8 +1,10 @@
 import 'package:ecommerce_app/blocs/cart/cart_bloc.dart';
 import 'package:ecommerce_app/blocs/category/category_bloc.dart';
+import 'package:ecommerce_app/blocs/checkout/checkout_bloc.dart';
 import 'package:ecommerce_app/blocs/wishlist/wishlist_bloc.dart';
 import 'package:ecommerce_app/config/app_router.dart';
 import 'package:ecommerce_app/repositories/category/category_repository.dart';
+import 'package:ecommerce_app/repositories/checkout/checkout_repository.dart';
 import 'package:ecommerce_app/repositories/product/product_repository.dart';
 import 'package:ecommerce_app/screens/screens.dart';
 import 'package:ecommerce_app/widgets/theme.dart';
@@ -26,10 +28,16 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (_) => WishlistBloc()..add(StartWishlist()),
+          create: (_) => CartBloc()..add(CartStarted()),
         ),
         BlocProvider(
-          create: (_) => CartBloc()..add(CartStarted()),
+          create: (context) => CheckoutBloc(
+            cartBloc: context.read<CartBloc>(),
+            checkoutRepository: CheckoutRepository(),
+          ),
+        ),
+        BlocProvider(
+          create: (_) => WishlistBloc()..add(StartWishlist()),
         ),
         BlocProvider(
           create: (_) => CategoryBloc(
@@ -47,8 +55,7 @@ class MyApp extends StatelessWidget {
         title: 'Collective Froba',
         theme: theme(),
         onGenerateRoute: AppRouter.onGenerateRoute,
-        initialRoute: CheckoutScreen.routeName,
-        home: const HomeScreen(),
+        initialRoute: SplashScreen.routeName,
       ),
     );
   }
