@@ -37,12 +37,17 @@ class MyApp extends StatelessWidget {
           ),
         ),
         BlocProvider(
-          create: (_) => WishlistBloc()..add(StartWishlist()),
+          create: (_) => WishlistBloc()
+            ..add(
+              StartWishlist(),
+            ),
         ),
         BlocProvider(
           create: (_) => CategoryBloc(
             categoryRepository: CategoryRepository(),
-          )..add(LoadCategories()),
+          )..add(
+              LoadCategories(),
+            ),
         ),
         BlocProvider(
           create: (_) => ProductBloc(
